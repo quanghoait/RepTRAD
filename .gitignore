@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/TRVC
+/TRVC/bin/Debug/TRVC.exe
+/TRVC/bin/Debug/TRVC.pdb
+/TRVC/obj/Debug/TRVC.pdb
+/TRVC/obj/Debug/TRVC.exe
+/TRVC/obj/Debug/TRVC.csproj.FileListAbsolute.txt
+/TRVC/obj/Debug/TRVC.csproj.CoreCompileInputs.cache
+/TRVC/obj/Debug/TRVC.csproj.AssemblyReference.cache
+/TRVC/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
