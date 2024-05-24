@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtBalanceRe = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtBalaceRe = new System.Windows.Forms.TextBox();
             this.txtFcode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBalance = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.comboBoxCode = new System.Windows.Forms.ComboBox();
             this.txtPaymentCashVND = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,12 +51,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtBalanceRe);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtBalaceRe);
             this.panel1.Controls.Add(this.txtFcode);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtBalance);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.comboBoxCode);
             this.panel1.Controls.Add(this.txtPaymentCashVND);
             this.panel1.Controls.Add(this.label4);
@@ -72,14 +70,14 @@
             this.panel1.Size = new System.Drawing.Size(442, 525);
             this.panel1.TabIndex = 0;
             // 
-            // txtBalanceRe
+            // label7
             // 
-            this.txtBalanceRe.AutoSize = true;
-            this.txtBalanceRe.Location = new System.Drawing.Point(29, 315);
-            this.txtBalanceRe.Name = "txtBalanceRe";
-            this.txtBalanceRe.Size = new System.Drawing.Size(60, 16);
-            this.txtBalanceRe.TabIndex = 9;
-            this.txtBalanceRe.Text = "Payment";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(32, 315);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 16);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Balance";
             // 
             // txtBalaceRe
             // 
@@ -88,6 +86,7 @@
             this.txtBalaceRe.Name = "txtBalaceRe";
             this.txtBalaceRe.Size = new System.Drawing.Size(302, 30);
             this.txtBalaceRe.TabIndex = 10;
+            this.txtBalaceRe.TextChanged += new System.EventHandler(this.txtBalaceRe_TextChanged);
             // 
             // txtFcode
             // 
@@ -114,15 +113,8 @@
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.Size = new System.Drawing.Size(302, 30);
             this.txtBalance.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 364);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 16);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Balance";
+            this.txtBalance.Text = "0";
+            this.txtBalance.TextChanged += new System.EventHandler(this.txtBalance_TextChanged);
             // 
             // comboBoxCode
             // 
@@ -132,6 +124,7 @@
             this.comboBoxCode.Name = "comboBoxCode";
             this.comboBoxCode.Size = new System.Drawing.Size(300, 30);
             this.comboBoxCode.TabIndex = 9;
+            this.comboBoxCode.SelectedIndexChanged += new System.EventHandler(this.comboBoxCode_SelectedIndexChanged);
             // 
             // txtPaymentCashVND
             // 
@@ -140,6 +133,8 @@
             this.txtPaymentCashVND.Name = "txtPaymentCashVND";
             this.txtPaymentCashVND.Size = new System.Drawing.Size(302, 30);
             this.txtPaymentCashVND.TabIndex = 8;
+            this.txtPaymentCashVND.Text = "0";
+            this.txtPaymentCashVND.TextChanged += new System.EventHandler(this.txtPaymentCashVND_TextChanged);
             // 
             // label4
             // 
@@ -165,6 +160,7 @@
             this.textincomecashVND.Name = "textincomecashVND";
             this.textincomecashVND.Size = new System.Drawing.Size(302, 30);
             this.textincomecashVND.TabIndex = 5;
+            this.textincomecashVND.Text = "0";
             this.textincomecashVND.TextChanged += new System.EventHandler(this.textincomecashVND_TextChanged);
             // 
             // label3
@@ -205,26 +201,26 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnInsertCashVND);
-            this.panel2.Location = new System.Drawing.Point(526, 39);
+            this.panel2.Location = new System.Drawing.Point(516, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(293, 390);
+            this.panel2.Size = new System.Drawing.Size(353, 523);
             this.panel2.TabIndex = 1;
             // 
             // btnInsertCashVND
             // 
-            this.btnInsertCashVND.Location = new System.Drawing.Point(14, 14);
+            this.btnInsertCashVND.Location = new System.Drawing.Point(20, 21);
             this.btnInsertCashVND.Name = "btnInsertCashVND";
             this.btnInsertCashVND.Size = new System.Drawing.Size(91, 37);
             this.btnInsertCashVND.TabIndex = 2;
             this.btnInsertCashVND.Text = "Insert";
             this.btnInsertCashVND.UseVisualStyleBackColor = true;
-          
+            this.btnInsertCashVND.Click += new System.EventHandler(this.btnInsertCashVND_Click);
             // 
             // CashVND
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 580);
+            this.ClientSize = new System.Drawing.Size(973, 559);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "CashVND";
@@ -248,14 +244,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnInsertCashVND;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtFcode;
         public System.Windows.Forms.TextBox textincomecashVND;
         public System.Windows.Forms.TextBox txtPaymentCashVND;
         public System.Windows.Forms.TextBox txtBalance;
-        private System.Windows.Forms.Label txtBalanceRe;
         public System.Windows.Forms.TextBox txtBalaceRe;
         public System.Windows.Forms.ComboBox comboBoxCode;
+        private System.Windows.Forms.Label label7;
     }
 }
