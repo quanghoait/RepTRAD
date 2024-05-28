@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Mysqlx.Crud;
+using System.Reflection.Emit;
 
 namespace TRVC
 {
@@ -53,7 +55,7 @@ namespace TRVC
         private void textincomecashVND_TextChanged(object sender, EventArgs e)
         {
             
-            if (textincomecashVND.Text == "")
+            if (textincomecashVND.Text == "" ||  txtBalaceRe.Text == "")
             {
                 textincomecashVND.Text = "0";
             }
@@ -63,6 +65,7 @@ namespace TRVC
                 decimal value1 = decimal.Parse(textincomecashVND.Text, System.Globalization.NumberStyles.AllowThousands);
                 textincomecashVND.Text = String.Format(culture, "{0:N0}", value1);
                 textincomecashVND.Select(textincomecashVND.Text.Length, 0);
+
                 decimal SumB = decimal.Parse(txtBalaceRe.Text) + decimal.Parse(textincomecashVND.Text) - decimal.Parse(txtPaymentCashVND.Text);
                 txtBalance.Text = SumB.ToString();
             }
@@ -143,21 +146,30 @@ namespace TRVC
 
         private void btnInsertCashVND_Click(object sender, EventArgs e)
         {
-            //conn.Open();
-            //string request = "INSERT INTO `trvc_data`.`code` (`S_code`, `F`, `ITEM_NAME`, `Account_No`, `Bank`, `Type`, `CodeGroup`) VALUES ('" + txtS_code.Text + "', '" + txtF.Text + "', '" + txtItemName.Text + "', '" + txtAccountNo.Text + "', '" + txtBank.Text + "', '" + txtType.Text + "', '" + comboBoxGroupCode.Text + "');";
-            //try
-            //{
-            //    MySqlCommand cmd = new MySqlCommand(request, conn);
-            //    cmd.ExecuteNonQuery();
+            DateTime dateTime = dateTimePickerCash.Value;
+            conn.Open();
+            string request = "INSERT INTO `trvc_data`.`cashvnd` (`DayCash`, `Decscription`, `Income`, `Payment`, `Balance`, `S_code`) VALUES('" + dateTime.ToShortDateString() + "', '" + txtDecsriptionCashVND.Text + "', '" + decimal.Parse(textincomecashVND.Text) + "', '" + decimal.Parse(txtPaymentCashVND.Text) + "', '"  +decimal.Parse(txtBalance.Text)+ "', '" + comboBoxCode.Text + "');";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(request, conn);
+                cmd.ExecuteNonQuery();
 
-            //    conn.Close();
-            //    MessageBox.Show("Added");
-            //}
-            //catch (Exception a)
-            //{
-            //    MessageBox.Show(a.Message);
-            //}
-            //conn.Close();
+                conn.Close();
+                MessageBox.Show("AddedCash");
+                txtBalaceRe.Text = txtBalance.Text;
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show(a.Message);
+                
+            }
+            conn.Close();
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+           ShowCashVND  cashVND = new ShowCashVND();
+            cashVND.Show();
         }
     }
 

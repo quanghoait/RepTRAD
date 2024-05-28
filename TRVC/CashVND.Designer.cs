@@ -37,14 +37,20 @@
             this.comboBoxCode = new System.Windows.Forms.ComboBox();
             this.txtPaymentCashVND = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerCash = new System.Windows.Forms.DateTimePicker();
             this.textincomecashVND = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDecsriptionCashVND = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnInsertCashVND = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -59,10 +65,10 @@
             this.panel1.Controls.Add(this.comboBoxCode);
             this.panel1.Controls.Add(this.txtPaymentCashVND);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dateTimePickerCash);
             this.panel1.Controls.Add(this.textincomecashVND);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtDecsriptionCashVND);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(22, 21);
@@ -86,6 +92,7 @@
             this.txtBalaceRe.Name = "txtBalaceRe";
             this.txtBalaceRe.Size = new System.Drawing.Size(302, 30);
             this.txtBalaceRe.TabIndex = 10;
+            this.txtBalaceRe.Text = "0";
             this.txtBalaceRe.TextChanged += new System.EventHandler(this.txtBalaceRe_TextChanged);
             // 
             // txtFcode
@@ -145,13 +152,13 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Payment";
             // 
-            // dateTimePicker1
+            // dateTimePickerCash
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(101, 39);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(302, 30);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePickerCash.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerCash.Location = new System.Drawing.Point(101, 39);
+            this.dateTimePickerCash.Name = "dateTimePickerCash";
+            this.dateTimePickerCash.Size = new System.Drawing.Size(302, 30);
+            this.dateTimePickerCash.TabIndex = 6;
             // 
             // textincomecashVND
             // 
@@ -172,13 +179,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Income";
             // 
-            // textBox2
+            // txtDecsriptionCashVND
             // 
-            this.textBox2.Location = new System.Drawing.Point(101, 89);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(302, 117);
-            this.textBox2.TabIndex = 3;
+            this.txtDecsriptionCashVND.Location = new System.Drawing.Point(101, 89);
+            this.txtDecsriptionCashVND.Multiline = true;
+            this.txtDecsriptionCashVND.Name = "txtDecsriptionCashVND";
+            this.txtDecsriptionCashVND.Size = new System.Drawing.Size(302, 117);
+            this.txtDecsriptionCashVND.TabIndex = 3;
             // 
             // label2
             // 
@@ -200,10 +207,16 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.btnView);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.btnInsertCashVND);
             this.panel2.Location = new System.Drawing.Point(516, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(353, 523);
+            this.panel2.Size = new System.Drawing.Size(301, 523);
             this.panel2.TabIndex = 1;
             // 
             // btnInsertCashVND
@@ -215,6 +228,61 @@
             this.btnInsertCashVND.Text = "Insert";
             this.btnInsertCashVND.UseVisualStyleBackColor = true;
             this.btnInsertCashVND.Click += new System.EventHandler(this.btnInsertCashVND_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(140, 21);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(91, 37);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(20, 80);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(91, 37);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(140, 80);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(91, 37);
+            this.btnView.TabIndex = 5;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(20, 133);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 37);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Refresh";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(140, 133);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(91, 37);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Update";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(20, 196);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(91, 37);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Update";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // CashVND
             // 
@@ -238,9 +306,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDecsriptionCashVND;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerCash;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnInsertCashVND;
@@ -252,5 +320,11 @@
         public System.Windows.Forms.TextBox txtBalaceRe;
         public System.Windows.Forms.ComboBox comboBoxCode;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

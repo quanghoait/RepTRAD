@@ -59,8 +59,10 @@ namespace TRVC
             catch (Exception a)
             {
                 MessageBox.Show(a.Message);
+               
             }
             conn.Close();
+            
         }
 
         private void btnShowCode_Click(object sender, EventArgs e)
