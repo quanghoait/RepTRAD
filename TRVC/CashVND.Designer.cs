@@ -44,13 +44,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnInsertCashVND = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnView = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnInsertCashVND = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -207,6 +208,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
@@ -219,33 +221,32 @@
             this.panel2.Size = new System.Drawing.Size(301, 523);
             this.panel2.TabIndex = 1;
             // 
-            // btnInsertCashVND
+            // button5
             // 
-            this.btnInsertCashVND.Location = new System.Drawing.Point(20, 21);
-            this.btnInsertCashVND.Name = "btnInsertCashVND";
-            this.btnInsertCashVND.Size = new System.Drawing.Size(91, 37);
-            this.btnInsertCashVND.TabIndex = 2;
-            this.btnInsertCashVND.Text = "Insert";
-            this.btnInsertCashVND.UseVisualStyleBackColor = true;
-            this.btnInsertCashVND.Click += new System.EventHandler(this.btnInsertCashVND_Click);
+            this.button5.Location = new System.Drawing.Point(20, 196);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(91, 37);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Update";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // btnUpdate
+            // button4
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(140, 21);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(91, 37);
-            this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.button4.Location = new System.Drawing.Point(140, 133);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(91, 37);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Update";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
+            // button3
             // 
-            this.btnDelete.Location = new System.Drawing.Point(20, 80);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(91, 37);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(20, 133);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 37);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Refresh";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // btnView
             // 
@@ -257,32 +258,42 @@
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Location = new System.Drawing.Point(20, 133);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 37);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Refresh";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(20, 80);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(91, 37);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnUpdate
             // 
-            this.button4.Location = new System.Drawing.Point(140, 133);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(91, 37);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Update";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(140, 21);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(91, 37);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnInsertCashVND
             // 
-            this.button5.Location = new System.Drawing.Point(20, 196);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(91, 37);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Update";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnInsertCashVND.Location = new System.Drawing.Point(20, 21);
+            this.btnInsertCashVND.Name = "btnInsertCashVND";
+            this.btnInsertCashVND.Size = new System.Drawing.Size(91, 37);
+            this.btnInsertCashVND.TabIndex = 2;
+            this.btnInsertCashVND.Text = "Insert";
+            this.btnInsertCashVND.UseVisualStyleBackColor = true;
+            this.btnInsertCashVND.Click += new System.EventHandler(this.btnInsertCashVND_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(140, 196);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 37);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Export";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // CashVND
             // 
@@ -326,5 +337,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button button1;
     }
 }
