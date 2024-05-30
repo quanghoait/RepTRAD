@@ -171,6 +171,18 @@ namespace TRVC
            ShowCashVND  cashVND = new ShowCashVND();
             cashVND.Show();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+           
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+                decimal value2 = decimal.Parse(txtPaymentCashVND.Text, System.Globalization.NumberStyles.AllowThousands);
+                txtPaymentCashVND.Text = String.Format(culture, "{0:N0}", value2);
+                txtPaymentCashVND.Select(txtPaymentCashVND.Text.Length, 0);
+                decimal SumB = decimal.Parse(txtBalaceRe.Text) + decimal.Parse(textincomecashVND.Text) - decimal.Parse(txtPaymentCashVND.Text);
+                txtBalance.Text = SumB.ToString();
+            
+        }
     }
 
 }
