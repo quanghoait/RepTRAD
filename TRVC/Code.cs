@@ -31,11 +31,12 @@ namespace TRVC
                 
                 string request = "SELECT * FROM trvc_data.code where CodeGroup= '"+comboBoxGroupCode.Text+"' ORDER BY S_code  DESC LIMIT 1;";
                 MySqlDataReader reader;
-               MySqlCommand cmd = new MySqlCommand(request, conn);
+                MySqlCommand cmd = new MySqlCommand(request, conn);
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     txtS_code.Text = reader["S_code"].ToString();
+                    
 
                }
 
@@ -60,6 +61,7 @@ namespace TRVC
             {
                 MessageBox.Show(a.Message);
                
+
             }
             conn.Close();
             
@@ -134,7 +136,7 @@ namespace TRVC
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                // txtS_code.Text = reader["S"].ToString();
+                 // txtS_code.Text = reader["S"].ToString();
                 //MessageBox.Show("" + reader["CodeGroupName"].ToString());
                 string s = "" + reader["CodeGroupName"].ToString();
                 //comboBoxGroupCode.Items.Add(reader["CodeGroupName"].ToString());
