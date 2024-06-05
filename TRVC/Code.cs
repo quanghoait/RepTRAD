@@ -22,28 +22,29 @@ namespace TRVC
         }
         
 
-        private void comboBoxGroupCode_SelectedIndexChanged(object sender, EventArgs e)
+        //private void comboBoxGroupCode_SelectedIndexChanged(object sender, EventArgs e)
 
-        {
-            conn.Open();
-            if (comboBoxGroupCode.Text== "Goverment office" || comboBoxGroupCode.Text == "TRVC")
-            {
+        //{
+        //    conn.Open();
+        //    if (comboBoxGroupCode.Text== "Goverment office" || comboBoxGroupCode.Text == "TRVC")
+        //    {
                 
-                string request = "SELECT * FROM trvc_data.code where CodeGroup= '"+comboBoxGroupCode.Text+"' ORDER BY S_code  DESC LIMIT 1;";
-                MySqlDataReader reader;
-                MySqlCommand cmd = new MySqlCommand(request, conn);
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    txtS_code.Text = reader["S_code"].ToString();
+        //        string request = "SELECT * FROM trvc_data.code where CodeGroup= '"+comboBoxGroupCode.Text+"' ORDER BY S_code  DESC LIMIT 1;";
+        //        MySqlDataReader reader;
+        //        MySqlCommand cmd = new MySqlCommand(request, conn);
+        //        reader = cmd.ExecuteReader();
+        //        while (reader.Read())
+        //        {
+        //            txtS_code.Text = reader["S_code"].ToString();
                     
 
-               }
+        //       }
 
 
-            }
-            conn.Close();   
-        }
+        //    }
+        //    conn.Close();   
+        //}
+
 
         private void btnInsetCode_Click(object sender, EventArgs e)
         {
@@ -130,7 +131,7 @@ namespace TRVC
         {
             conn.Open();
 
-            string request = "SELECT CodeGroupName FROM trvc_data.codegroup";
+            string request = "SELECT * FROM trvc_data.codegroup";
             MySqlDataReader reader;
             MySqlCommand cmd = new MySqlCommand(request, conn);
             reader = cmd.ExecuteReader();
@@ -138,13 +139,34 @@ namespace TRVC
             {
                  // txtS_code.Text = reader["S"].ToString();
                 //MessageBox.Show("" + reader["CodeGroupName"].ToString());
-                string s = "" + reader["CodeGroupName"].ToString();
+                string s = "" + reader["IDCodeGroup"].ToString();
                 //comboBoxGroupCode.Items.Add(reader["CodeGroupName"].ToString());
                 comboBoxGroupCode.Items.Add(s);
 
             }
             conn.Close();
 
+        }
+
+        private void comboBoxGroupCode_SelectedValueChanged(object sender, EventArgs e)
+        {
+            conn.Open();
+            
+
+                string request = "SELECT * FROM trvc_data.code where IDCodeGroup= '" + comboBoxGroupCode.Text + "' ORDER BY S_code  DESC LIMIT 1;";
+                MySqlDataReader reader;
+                MySqlCommand cmd = new MySqlCommand(request, conn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    txtS_code.Text = reader["S_code"].ToString();
+
+
+                }
+
+
+            
+            conn.Close();
         }
     }
     }

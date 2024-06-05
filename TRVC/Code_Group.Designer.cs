@@ -46,7 +46,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_code_group);
             this.panel1.Controls.Add(this.txtCode_Group);
-            this.panel1.Location = new System.Drawing.Point(25, 92);
+            this.panel1.Location = new System.Drawing.Point(25, 83);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(677, 109);
             this.panel1.TabIndex = 0;
@@ -86,7 +86,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(139, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(469, 54);
+            this.panel2.Size = new System.Drawing.Size(469, 44);
             this.panel2.TabIndex = 1;
             // 
             // label2

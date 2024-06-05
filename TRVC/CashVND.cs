@@ -22,18 +22,18 @@ namespace TRVC
         public CashVND()
         {
             InitializeComponent();
-            conn.Open();
+            //conn.Open();
 
-            string request = "SELECT Balance FROM trvc_data.cashvnd where IDCash = (SELECT max(IDCash)  FROM trvc_data.cashvnd);";
-            MySqlDataReader reader;
-            MySqlCommand cmd = new MySqlCommand(request, conn);
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                string s = reader["Balance"].ToString();
-                txtBalaceRe.Text = s;
-            }
-            conn.Close();
+            //string request = "SELECT Balance FROM trvc_data.cashvnd where IDCash = (SELECT max(IDCash)  FROM trvc_data.cashvnd);";
+            //MySqlDataReader reader;
+            //MySqlCommand cmd = new MySqlCommand(request, conn);
+            //reader = cmd.ExecuteReader();
+            //while (reader.Read())
+            //{
+            //    string s = reader["Balance"].ToString();
+            //    txtBalaceRe.Text = s;
+            //}
+            //conn.Close();
         }
 
 
@@ -148,7 +148,7 @@ namespace TRVC
         {
             DateTime dateTime = dateTimePickerCash.Value;
             conn.Open();
-            string request = "INSERT INTO `trvc_data`.`cashvnd` (`DayCash`, `Decscription`, `Income`, `Payment`, `Balance`, `S_code`) VALUES('" + dateTime.ToShortDateString() + "', '" + txtDecsriptionCashVND.Text + "', '" + decimal.Parse(textincomecashVND.Text) + "', '" + decimal.Parse(txtPaymentCashVND.Text) + "', '"  +decimal.Parse(txtBalance.Text)+ "', '" + comboBoxCode.Text + "');";
+            string request = "INSERT INTO `trvc_data`.`cashvnd` (`DayCash`, `Decscription`, `Income`, `Payment`, `S_code`) VALUES('" + dateTime.ToShortDateString() + "', '" + txtDecsriptionCashVND.Text + "', '" + decimal.Parse(textincomecashVND.Text) + "', '" + decimal.Parse(txtPaymentCashVND.Text) + "',  '" + comboBoxCode.Text + "');";
             try
             {
                 MySqlCommand cmd = new MySqlCommand(request, conn);
